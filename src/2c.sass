@@ -1,0 +1,177 @@
+body
+  margin: 0
+  height: 22in
+  width: 17in
+  display: flex
+  flex-direction: column
+
+h1, h2, h3, h4, ul, ol, div
+  margin: 0
+  padding: 0
+  font-weight: normal
+
+// fonts and text
+
+body
+  font-family: 'Lora'
+
+.mono
+  font-family: 'Anonymous Pro'
+
+.dquo:before
+  content: "\201c"
+.dquo:after
+  content: "\201d"
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// columns and main body
+
+main
+  flex-grow: 1
+  display: flex
+  margin-left: 0.8in
+  margin-right: 0.8in
+  margin-top: 1in
+  margin-bottom: 1in
+
+div#lc, div#rc
+  padding: 0 0.4in
+
+div#lc
+  flex-basis: 35%
+  /* border-right: 1px dotted #aaa
+div#rc
+  flex-basis: 65%
+
+section h1
+  border-bottom: 2px solid #155
+
+div.row
+  display: flex
+  justify-content: space-between
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// info column
+
+div#lc
+  display: flex
+  flex-direction: column
+
+header
+  flex-grow: 0
+
+  h1
+    font-size: 0.8in
+    text-align: center
+
+section.info, section.edu, section.skills
+  font-size: 0.3in
+
+  h1
+    font-size: 1.3em
+    font-weight: bold
+    text-transform: uppercase
+    margin: 0.5em 0
+
+  h2
+    font-size: 1.2em
+
+  h3
+    font-size: 1em
+
+  table
+    font-size: 1em
+    width: 100%
+  td
+    text-align: right
+  td.label
+    text-align: left
+
+//
+
+section.info
+  h1
+    display: none
+
+section.edu
+  h2
+    font-weight: bold
+
+  h3
+    margin: 0.2em 0
+    font-size: 1em
+
+  .degree, .college
+    text-align: justify
+
+section.skills
+  h2
+    font-weight: bold
+
+  table
+    margin-bottom: 0.7em
+
+  $w1: 0.2in
+  $h: 0.2in
+  .bar
+    height: $h
+    display: inline-block
+  .full
+    background: #222
+  .empty
+    background: #bbb
+  .w1
+    width: 1 * $w1
+  .w2
+    width: 2 * $w1
+  .w3
+    width: 3 * $w1
+  .w4
+    width: 4 * $w1
+  .w5
+    width: 5 * $w1
+  .w6
+    width: 6 * $w1
+  .w7
+    width: 7 * $w1
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// exp column
+
+section.work
+  font-size: 0.5in
+
+  article
+    margin-bottom: 0.3in
+
+  h1
+    font-size: 1em
+    font-weight: bold
+    text-transform: uppercase
+    margin: 0.5em 0
+
+  ul
+    margin: 0.3in 0
+
+  .job
+    flex-grow: 1
+    font-size: 1em
+  .place
+    flex-grow: 1
+    font-size: 0.75em
+  .when, .where
+    font-size: 0.6em
+    align-self: center
+
+  .paper h2
+    text-align: justify
+  .pubname
+    font-size: 0.7em
+  .pubauths, .pubconf
+    font-size: 0.6em
+  .proceedings
+    font-style: italic
+
+  li
+    font-size: 0.6em
+    list-style-position: inside
