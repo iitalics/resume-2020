@@ -18,7 +18,8 @@
 
 (define skills
   '(["Languages"
-     (["Haskell"          0.8]
+     (["Racket"           1.0]
+      ["Haskell"          0.8]
       ["Python"           0.8]
       ["Rust"             0.6]
       ["Scala"            0.7]
