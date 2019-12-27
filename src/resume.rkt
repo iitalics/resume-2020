@@ -32,29 +32,48 @@
       ["Docker"           0.6])]))
 
 (define work-experience
-  '(["Software Engineer"
-     "Jul-Dec, 2019"
+  `(["Software Engineer"
+     "Jul–Dec, 2019"
      "Broad Institute of MIT and Harvard"
      "Cambridge, MA"
-     ("One" "Two" "Three" "Four")]
+     (
+      ["Worked on compiler backend for an open source Python library "
+       "used by geneticists at the Broad Institute."]
+      "Extended the JVM code-generation infrastructure to enable new kinds of control flow optimizations."
+      "Designed a space efficient stream-processing API based on cutting edge code-generation research."
+      ;"Implemented data structures for aggregating results of distributed computations."
+      )]
 
     ["Software Engineer"
-     "Jul-Dec, 2018"
+     "Jul–Dec, 2018"
      "Kumu Networks"
      "Sunnyvale, CA"
-     ("One" "Two" "Three" "Four")]
+     (
+      "Maintained React apps used by customers and internal team."
+      "Developed Python software to perform hardware stress-tests on multiple devices in parallel."
+      "Designed MySQL database schema for tracking and querying hardware diagnostics data."
+      ;"Configured GitLab CI service for custom Linux kernel builds."
+      )]
 
     ["Research Assistant"
-     "May-Aug, 2017 + May-Jun, 2018"
+     "May–Aug, 2017 + May–Jun, 2018"
      "NU Programming Research Lab"
      "Boston, MA"
-     ("One" "Two" "Three" "Four")]
+     (
+      ["Developed " (em "Turnstile") ", a domain specific language for implementing type checkers."]
+      "Designed new features to enable the implementation of linear and affine type systems."
+      ["Collaborated with the maintainer of the "
+       (em "Hackett")
+       " language, in order to extend it with more advanced type system features."]
+      )]
 
     ["Tutor, Fundamentals of CS"
-     "Sep-Dec, 2017"
+     "Sep–Dec, 2017"
      "Northeastern University"
      "Boston, MA"
-     ("One" "Two")]))
+     ("Graded weekly homework assignments and provided feedback to students."
+      ["Led two special-topic lab sessions, "
+       "having students explore some advanced facilities of the Racket programming language."])]))
 
 (define publications
   '(["Dependent Type Systems as Macros"
