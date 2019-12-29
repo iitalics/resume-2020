@@ -37,6 +37,11 @@
                   (publications pub))
             #:style style))))
 
+(define rich
+  (match-lambda
+    [(? string? s) (list s)]
+    [(? list? xs) xs]))
+
 ;; --------------------
 
 (define (header info)
@@ -50,7 +55,7 @@
     (match (hash-ref info key #f)
       [#f ""]
       [value `(tr (td ([class ,(format "label ~a" key)]) ,label)
-                  (td ([class ,value-class]) ,value))]))
+                  (td ([class ,value-class]) ,@(rich value)))]))
   `(section ([class "info"])
             (h1 "Personal Info")
             (table ,@(for/list ([x '([github "github:" "mono"]
@@ -67,18 +72,18 @@
       (match (hash-ref stats key #f)
         [#f ""]
         [value `(tr (td ([class ,(format "label ~a" key)]) ,label)
-                    (td ([class ,value-class]) ,value))]))
-    `{(h2 ([class "school"]) ,school)
-      (h3 ([class "where"]) ,where)
-      (h3 ([class "college"]) ,college)
-      (h3 ([class "degree"]) ,degree)
-      (table ,@(for/list ([x '([gpa "GPA:" ""]
-                               [honors "honors:" ""]
-                               [grad "expected graduation:" "time"])])
-                 (apply stat-tr x)))})
+                    (td ([class ,value-class]) ,@(rich value)))]))
+    `(div (h2 ([class "school"]) ,school)
+          (h3 ([class "where"]) ,where)
+          (h3 ([class "college"]) ,college)
+          (h3 ([class "degree"]) ,degree)
+          (table ,@(for/list ([x '([gpa "GPA:" ""]
+                                   [honors "honors:" ""]
+                                   [grad "expected graduation:" "time"])])
+                     (apply stat-tr x)))))
   `(section ([class "edu"])
             (h1 "Education")
-            ,@(append-map edu xs)))
+            ,@(map edu xs)))
 
 ;; --------------------
 
@@ -104,13 +109,13 @@
   (define (wrk job when place where points)
     `(article ([class "exp"])
               (div ([class "row"])
-                   (h2 ([class "job"]) ,job)
-                   (h2 ([class "when"]) ,when))
+                   (h2 ([class "job"]) ,@(rich job))
+                   (h2 ([class "when"]) ,@(rich when)))
               (div ([class "row"])
-                   (h2 ([class "place"]) ,place)
-                   (h2 ([class "where"]) ,where))
+                   (h2 ([class "place"]) ,@(rich place))
+                   (h2 ([class "where"]) ,@(rich where)))
               (ul ,@(for/list ([p (in-list points)])
-                      `(li ,p)))))
+                      `(li ,@(rich p))))))
   `(section ([class "work"])
             (h1 "Work Experience")
             ,@(for/list ([x (in-list xs)])
@@ -129,10 +134,10 @@
 (define (publications xs)
   (define (pub name authors conf)
     `(article ([class "paper"])
-              (h2 ([class "pubname"]) (span ([class "dquo"]) ,name))
+              (h2 ([class "pubname"]) (span ([class "dquo"]) ,@(rich name)))
               (h2 ([class "pubauths"]) ,(string-join authors ", "))
               (h2 ([class "pubconf"])
-                  "In " (span ([class "proceedings"]) ,(conference-name conf)))))
+                  "In " (span ([class "proceedings"]) ,(conference-name conf)) ".")))
   `(section ([class "work pub"])
             (h1 "Publications")
             ,@(for/list ([x (in-list xs)])
