@@ -83,9 +83,20 @@
       "William J. Bowman")
      (POPL 47)]))
 
-(require "../resume-gen.rkt")
-(gen-resume #:personal personal
-            #:education education
-            #:skills skills
-            #:work-experience work-experience
-            #:publications publications)
+;; ---
+
+(require "../mangle.rkt")
+(when (getenv "MANGLE")
+  (mangle! personal)
+  (mangle! education)
+  (mangle! skills)
+  (mangle! work-experience)
+  (mangle! publications))
+
+(module+ main
+  (require "../resume-gen.rkt")
+  (gen-resume #:personal personal
+              #:education education
+              #:skills skills
+              #:work-experience work-experience
+              #:publications publications))
