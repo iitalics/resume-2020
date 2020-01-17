@@ -31,6 +31,17 @@
       ["Emacs"            0.8]
       ["Docker"           0.6])]))
 
+(define projects
+  '(["Nanocaml"
+     "Compiler extension for the OCaml language. Uses reflection to automate tedious aspects "
+     "of writing compilers."]
+    ["Ax"
+     "Simple and performant UI toolkit and layout engine. Intended to be used for functional-reactive "
+     "UI development."]
+    ["Opal"
+     "Statically-typed programming language, including bytecode compiler and garbage-collected runtime "
+     "system. Experiments with \"trait\" systems ala Rust and Haskell."]))
+
 (define work-experience
   `(["Software Engineer"
      "Jul–Dec, 2019"
@@ -39,7 +50,7 @@
      (
       ["Worked on compiler backend for an open source Python library "
        "used by geneticists at the Broad Institute."]
-      "Extended the JVM code-generation infrastructure to enable new kinds of control flow optimizations."
+      "Extended JVM code-generation infrastructure to enable new kinds of control flow optimizations."
       "Designed a space efficient stream-processing API based on cutting edge code-generation research."
       ;"Implemented data structures for aggregating results of distributed computations."
       )]
@@ -98,5 +109,6 @@
   (gen-resume #:personal personal
               #:education education
               #:skills skills
+              #:projects projects
               #:work-experience work-experience
               #:publications publications))

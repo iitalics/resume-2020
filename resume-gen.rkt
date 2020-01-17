@@ -5,6 +5,7 @@
 (define (gen-resume #:personal prs
                     #:education edu
                     #:skills skl
+                    #:projects prj
                     #:work-experience wrk
                     #:publications pub
                     #:style [style "2c"])
@@ -12,6 +13,7 @@
    (resume #:personal prs
            #:education edu
            #:skills skl
+           #:projects prj
            #:work-experience wrk
            #:publications pub
            #:style style)))
@@ -19,6 +21,7 @@
 (define (resume #:personal prs
                 #:education edu
                 #:skills skl
+                #:projects prj
                 #:work-experience wrk
                 #:publications pub
                 #:style style)
