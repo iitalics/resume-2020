@@ -38,10 +38,9 @@
      (define suf (substring s (string-length pre)))
      (define (weight-error s*)
        (abs (- (string-weight s*) (string-weight pre))))
-     (define pre*
-       (for/list ([i (in-range 10)])
-         (list->string (mangled-chars (string->list pre)))))
-     (string-append (argmin weight-error pre*)
+     (string-append (argmin weight-error
+                            (for/list ([i (in-range 10)])
+                              (list->string (mangled-chars (string->list pre)))))
                     (mangled-string suf))]))
 
 (define (mangled sexp)
