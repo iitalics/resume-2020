@@ -10,6 +10,4 @@ Tools required to build:
 
 Fonts required:
 
-  - "Lora"
-
-  - "Anonymous Pro"
+  - "ABeeZee"
