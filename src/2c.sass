@@ -5,7 +5,7 @@ body
   display: flex
   flex-direction: column
 
-h1, h2, h3, h4, ul, ol, div
+h1, h2, h3, h4, ul, ol, div, p
   margin: 0
   padding: 0
   font-weight: normal
@@ -13,10 +13,12 @@ h1, h2, h3, h4, ul, ol, div
 // fonts and text
 
 body
-  font-family: 'Lora'
+  /* font-family: 'Lora'
+  font-family: 'ABeeZee'
 
 .mono
-  font-family: 'Anonymous Pro'
+  /* font-family: 'Anonymous Pro'
+  /* font-family: 'Oxygen Mono'
 
 .dquo:before
   content: "\201c"
@@ -64,7 +66,7 @@ header
     font-size: 0.8in
     text-align: center
 
-section.info, section.edu, section.skills
+section.info, section.edu, section.skills, section.projects
   font-size: 0.3in
 
   h1
@@ -104,9 +106,19 @@ section.edu
   .degree, .college
     text-align: justify
 
-section.skills
+section.skills, section.projects
   h2
     font-weight: bold
+
+  h3
+    text-align: center
+    font-size: 0.9em
+    margin-top: 1em
+
+  p
+    // margin-left: 1em
+    margin-bottom: 0.2em
+    text-align: justify
 
   table
     margin-bottom: 0.7em

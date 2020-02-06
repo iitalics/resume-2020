@@ -14,15 +14,16 @@
      "Candidate for Bachelor of Science in Computer Science"
      #hash((gpa    . "3.61/4")
            (honors . "Dean's list")
-           (grad   . "May, 2020"))]))
+           (grad   . "May, 2021"))]))
 
 (define skills
   '(["Languages"
-     (["Racket"           1.0]
+     (;["Racket"           1.0]
+      ["Scala"            0.7]
       ["Haskell"          0.8]
       ["Python"           0.8]
       ["Rust"             0.6]
-      ["Scala"            0.7]
+      ["C/C++"            0.6]
       ["Javascript (ES6)" 0.6])]
 
     ["Software"
@@ -33,14 +34,14 @@
 
 (define projects
   '(["Nanocaml"
-     "Compiler extension for the OCaml language. Uses reflection to automate tedious aspects "
-     "of writing compilers."]
+     "Compiler extension for the OCaml language. Uses reflection to automate tedious algorithms "
+     "commonly found in compilers such as recursive tree traversals."]
     ["Ax"
-     "Simple and performant UI toolkit and layout engine. Intended to be used for functional-reactive "
-     "UI development."]
+     "Simple and performant UI toolkit and layout engine. Written in C, but intended to be used for "
+     "reactive UI development in OCaml or Racket."]
     ["Opal"
-     "Statically-typed programming language, including bytecode compiler and garbage-collected runtime "
-     "system. Experiments with \"trait\" systems ala Rust and Haskell."]))
+     "Statically-typed programming language. Includes bytecode compiler and garbage-collected runtime "
+     "system, with some unique type-system features."]))
 
 (define work-experience
   `(["Software Engineer"
@@ -67,7 +68,7 @@
       )]
 
     ["Research Assistant"
-     "May–Aug, 2017 + May–Jun, 2018"
+     ("May–Aug, 2017 +" (br) "May–Jun, 2018")
      "NU Programming Research Lab"
      "Boston, MA"
      (
@@ -101,6 +102,7 @@
   (mangle! personal)
   (mangle! education)
   (mangle! skills)
+  (mangle! projects)
   (mangle! work-experience)
   (mangle! publications))
 

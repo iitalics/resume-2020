@@ -35,7 +35,8 @@
      ,(main (list (header prs)
                   (personal prs)
                   (education edu)
-                  (skills skl))
+                  (skills skl)
+                  (projects prj))
             (list (work-exp wrk)
                   (publications pub))
             #:style style))))
@@ -93,6 +94,17 @@
 (define (skills xs)
   (define (skl x)
     (match-define (list cat entries) x)
+    `(article (h2 ,cat)
+              (p ,(string-join (map car entries)
+                               ", "))))
+  `(section ([class "skills"])
+            (h1 "Skills")
+            ,@(map skl xs)))
+
+#;
+(define (skills xs)
+  (define (skl x)
+    (match-define (list cat entries) x)
     (define (tr name amt)
       (define w1 (exact-ceiling (* amt 8)))
       (define w2 (- 8 w1))
@@ -105,6 +117,19 @@
   `(section ([class "skills"])
             (h1 "Skills")
             ,@(map skl xs)))
+
+;; --------------------
+
+(define (projects xs)
+  (define (prj x)
+    (match-define (cons name text) x)
+    `(article
+      (h2 () ,@(rich name))
+      (p () ,@(rich text))))
+  `(section ([class "projects"])
+            (h1 "Projects")
+            ,@(map prj xs)
+            (h3 "(all projects available on GitHub)")))
 
 ;; --------------------
 
