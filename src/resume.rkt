@@ -12,19 +12,19 @@
      "Boston, MA"
      "Khoury College of Computer Sciences"
      "Candidate for Bachelor of Science in Computer Science"
-     #hash((gpa    . "3.61/4")
+     #hash((gpa    . "3.57/4")
            (honors . "Dean's list")
            (grad   . "May, 2021"))]))
 
 (define skills
   '(["Languages"
-     (;["Racket"           1.0]
-      ["Scala"            0.7]
+     (["Scala"            0.7]
       ["Haskell"          0.8]
       ["Python"           0.8]
       ["Rust"             0.6]
       ["C/C++"            0.6]
-      ["Javascript (ES6)" 0.6])]
+      ["Javascript (ES6)" 0.6]
+      ["Racket"           1.0])]
 
     ["Software"
      (["Git"              0.8]
@@ -33,35 +33,39 @@
       ["Docker"           0.6])]))
 
 (define projects
-  '(["Nanocaml"
+  '([[(em "Nanocaml")]
      "Compiler extension for the OCaml language. Uses reflection to automate tedious algorithms "
      "commonly found in compilers such as recursive tree traversals."]
-    ["Ax"
+    [[(em "Ax")]
      "Simple and performant UI toolkit and layout engine. Written in C, but intended to be used for "
      "reactive UI development in OCaml or Racket."]
-    ["Opal"
-     "Statically-typed programming language. Includes bytecode compiler and garbage-collected runtime "
-     "system, with some unique type-system features."]))
+    [[(em "Opal")]
+     "Programming language with some unique type-system features. Includes bytecode compiler and "
+     "garbage-collected runtime system. Compiler implemented in C++."]
+    ["Open source contributions"
+     "Contributor to open source projects such as the Racket language, and the "
+     "Agda standard-library."]
+    ))
 
 (define work-experience
   `(["Software Engineer"
      "Jul–Dec, 2019"
      "Broad Institute of MIT and Harvard"
      "Cambridge, MA"
-     (
-      ["Worked on compiler backend for an open source Python library "
+     [
+      ["Worked on compiler backend in Scala for an open source Python library "
        "used by geneticists at the Broad Institute."]
       "Extended JVM code-generation infrastructure to enable new kinds of control flow optimizations."
-      "Designed a space efficient stream-processing API based on cutting edge code-generation research."
-      ;"Implemented data structures for aggregating results of distributed computations."
-      )]
+      ["Designed a stream-processing API that integrates with Apache Spark, and solved a major "
+       "performance bottleneck in space-complexity."]
+      ]]
 
     ["Software Engineer"
      "Jul–Dec, 2018"
      "Kumu Networks"
      "Sunnyvale, CA"
      (
-      "Maintained React apps used by customers and internal team."
+      "Maintained various React apps used by customers and the internal team."
       "Developed Python software to perform hardware stress-tests on multiple devices in parallel."
       "Designed MySQL database schema for tracking and querying hardware diagnostics data."
       ;"Configured GitLab CI service for custom Linux kernel builds."
