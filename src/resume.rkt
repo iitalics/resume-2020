@@ -5,7 +5,8 @@
          (github  . "github.com/iitalics")
          (email   . "milo@ccs.neu.edu")
          (phone   . "(808)280-0766")
-         (address . "PO BOX 230043, Boston, MA 02123")))
+         (address . "PO BOX 230043, Boston, MA 02123")
+         (avail   . "May, 2020")))
 
 (define education
   '(["Northeastern University"

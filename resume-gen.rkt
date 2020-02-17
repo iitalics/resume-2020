@@ -62,6 +62,9 @@
                   (td ([class ,value-class]) ,@(rich value)))]))
   `(section ([class "info"])
             (h1 "Personal Info")
+            ,@(match (hash-ref info 'avail #f)
+                [#f '()]
+                [x (list `(h2 "Available " ,@(rich x)))])
             (table ,@(for/list ([x '([github "github:" "mono"]
                                      [email  "email:"  "mono"]
                                      [phone  "phone:"  "mono"])])
