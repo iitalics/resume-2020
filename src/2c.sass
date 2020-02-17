@@ -69,12 +69,14 @@ div.row
 //////////////////////////////////////////////////////////////////////////////////////////
 // info column
 
-header h1
-  font-size: 0.9in
+header
+  font-size: 0.45in
 section.info, section.edu, section.skills, section.projects
   font-size: 0.315in
 section.work
   font-size: 0.545in
+.covlet section.body
+  font-size: 0.35in
 
 div#lc
   display: flex
@@ -208,3 +210,28 @@ section.work
     font-size: 0.6em
     list-style-position: inside
     text-align: justify
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// cover letter
+
+main.covlet
+  flex-direction: column
+
+.covlet header
+  text-align: center
+
+  .about
+    border-bottom: 2px solid #155
+    display: flex
+    justify-content: space-between
+    width: 90%
+    margin: auto
+    padding: 0.2em
+
+  h3
+    font-size: 0.9em
+
+  margin-bottom: 1em
+
+.covlet p
+  text-align: justify

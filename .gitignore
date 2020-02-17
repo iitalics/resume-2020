@@ -1,3 +1,4 @@
 build
 fonts
 *.pdf
+src/cover*.html

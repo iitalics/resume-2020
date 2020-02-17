@@ -6,10 +6,10 @@ HTML2IMG=wkhtmltoimage
 STYLES=$(wildcard src/*.sass)
 RESUMES=$(wildcard src/resume*.rkt)
 
-PDF=${RESUMES:src/%.rkt=%.pdf}
-JPG=${RESUMES:src/%.rkt=build/%.jpg}
+HTML=${RESUMES:src/%.rkt=build/%.html} build/cover.html
+PDF=${HTML:build/%.html=%.pdf}
+JPG=${PDF:%.pdf=build/%.jpg}
 CSS=${STYLES:src/%.sass=build/%.css}
-HTML=${RESUMES:src/%.rkt=build/%.html}
 
 
 all: ${CSS} ${HTML} ${PDF} ${JPG}
@@ -25,9 +25,13 @@ build/%.css: src/%.sass
 	@mkdir -p build
 	${SASSC} $< $@
 
-build/%.html: src/%.rkt resume-gen.rkt ${CSS}
+build/resume.html: src/resume.rkt resume-gen.rkt ${CSS}
 	@mkdir -p build
 	${RACKET} $< > $@
+
+build/cover.html: src/cover.html ${CSS}
+	@mkdir -p build
+	cp $< $@
 
 %.pdf: build/%.html
 	${HTML2PDF} -s Letter \
